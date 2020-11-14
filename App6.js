@@ -2,41 +2,44 @@
 
 import React from "react";
 import { AreaChart, Area, YAxis, XAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import Trackerchart from "./trackerChart";
 
 const data = [
     {
-        "name": "Jan 2019",
-        "Product A": 3432,
-        "Procuct B": 2342
+        "name": "Jan 2020",
+        "Debit": 3432,
+        "Credit": 2342
     },
     {
-        "name": "Feb 2019",
-        "Product A": 2342,
-        "Procuct B": 3246
+        "name": "Feb 2020",
+        "Debit": 2342,
+        "Credit": 3246
     },
     {
-        "name": "Mar 2019",
-        "Product A": 4565,
-        "Procuct B": 4556
+        "name": "Mar 2020",
+        "Debit": 4565,
+        "Credit": 4556
     },
     {
-        "name": "Apr 2019",
-        "Product A": 6654,
-        "Procuct B": 4465
+        "name": "Apr 2020",
+        "Debit": 6654,
+        "Credit": 4465
     },
     {
-        "name": "May 2019",
-        "Product A": 8765,
-        "Procuct B": 4553
+        "name": "May 2020",
+        "Debit": 8765,
+        "Credit": 4553
     }
 ];
+
 class App6 extends React.Component {
 
     
 
-    render() {
+    render() { 
         return (
-            <AreaChart width={730} height={250} data={data}
+            <div style={{ margin: `50px`, display: `flex`, flexDirection: `row`, justifyContent: `center` }}>
+            <AreaChart width={900} height={400} data={data}
                 margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                 <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -53,9 +56,11 @@ class App6 extends React.Component {
                 <CartesianGrid strokeDasharray="3 3" />
                 <Tooltip />
                 <Legend />
-                <Area type="monotone" dataKey="Product A" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-                <Area type="monotone" dataKey="Procuct B" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
+                <Area type="monotone" dataKey="Debit" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                <Area type="monotone" dataKey="Credit" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
             </AreaChart>
+            <Trackerchart/>
+            </div>
         )
     };
 }
