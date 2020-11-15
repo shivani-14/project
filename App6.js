@@ -2,7 +2,7 @@
 
 import React from "react";
 import { AreaChart, Area, YAxis, XAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import Trackerchart from "./trackerChart";
+import Tracker from "./Tracker";
 
 const data = [
     {
@@ -59,7 +59,7 @@ class App6 extends React.Component {
                 <Area type="monotone" dataKey="Debit" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
                 <Area type="monotone" dataKey="Credit" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
             </AreaChart>
-            <Trackerchart/>
+            <Tracker />
             </div>
         )
     };
