@@ -3,11 +3,10 @@ import { Doughnut } from 'react-chartjs-2';
 import Badge from 'react-bootstrap/Badge';
 import STracker from './savings';
 import CTracker from './credit';
-import CUTracker from './current';
  
 
 let bg;
-let Expense_spent=[50000];
+let Expense_spent=[4000];
 let ExpenseLimit=[50000];
 
 const chartColors ={
@@ -20,7 +19,7 @@ const chartColors ={
     
 
 
-class Tracker extends Component{
+class CUTracker extends Component{
  constructor(props){
      super(props)
      this.state={
@@ -50,16 +49,20 @@ class Tracker extends Component{
     }}
     render(){
         return(
-            <div style={{ margin: `50px`, display: `flex`, flexDirection: `row` }}>
-            <div></div>
-            <STracker />
-            <CTracker />
-            <CUTracker />
-            </div>
+                <div id="Trackerchart"  style={{height:900,width:900}}>
+                <h1>Current :</h1>
+ <Doughnut data={this.state.data1}   options={{responsive:true, maintainAspectRatio: true}}/>
+                
+<div><h5>ExpenseLimit Indicators: <Badge variant="success">Normal</Badge>{' '}
+  <Badge variant="primary">Moderate</Badge>{' '}
+  <Badge variant="danger">ExceedLimit</Badge>{' '}</h5>
+</div>
+                
+                </div>
             
 
         )
     }
 }
 
-export default Tracker;
+export default CUTracker;
