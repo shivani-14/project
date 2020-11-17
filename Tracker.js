@@ -47,7 +47,10 @@ class Tracker extends Component{
     }}
     render(){
         return(
+            <div style={{ margin: `50px`, display: `flex`, flexDirection: `row` }}>
+            <div></div>
             <div id="Trackerchart"  style={{height:600,width:700}}>
+            <h1>Savings :</h1>
  <Doughnut data={this.state.data1}   options={{responsive:true, maintainAspectRatio: true}}/>
                 
 <div><h5>ExpenseLimit Indicators: <Badge variant="success">Normal</Badge>{' '}
@@ -56,6 +59,28 @@ class Tracker extends Component{
 </div>
                 
                 </div>
+                <div id="Trackerchart"  style={{height:600,width:700}}>
+                <h1>Credit :</h1>
+ <Doughnut data={this.state.data1}   options={{responsive:true, maintainAspectRatio: true}}/>
+                
+<div><h5>ExpenseLimit Indicators: <Badge variant="success">Normal</Badge>{' '}
+  <Badge variant="primary">Moderate</Badge>{' '}
+  <Badge variant="danger">ExceedLimit</Badge>{' '}</h5>
+</div>
+                
+                </div>
+                <div id="Trackerchart"  style={{height:600,width:700}}>
+                <h1>Current :</h1>
+ <Doughnut data={this.state.data1}   options={{responsive:true, maintainAspectRatio: true}}/>
+                
+<div><h5>ExpenseLimit Indicators: <Badge variant="success">Normal</Badge>{' '}
+  <Badge variant="primary">Moderate</Badge>{' '}
+  <Badge variant="danger">ExceedLimit</Badge>{' '}</h5>
+</div>
+                
+                </div>
+            </div>
+            
 
         )
     }
